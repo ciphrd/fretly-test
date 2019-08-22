@@ -1,0 +1,93 @@
+* {
+  margin: 0; 
+  padding: 0;
+}
+
+body {
+  background: #fff;
+}
+
+.app-container {
+  width: 500px;
+  margin: 150px auto 0 auto;
+}
+
+.app-logo {
+  width: 80%;
+  margin-left: 10%;
+  display: block;
+  margin-bottom: 40px;
+}
+
+/* fixes for materialize.css */
+.radio-group {
+  margin: 10px 0 25px 0;
+}
+
+form button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block !important;
+}
+
+/* form validation */
+.form-error {
+  display: none;
+}
+
+input.validation {
+  position: relative;
+}
+
+input.validation.ng-touched.ng-valid {
+  border-bottom-color: #34eb8f !important;
+  -webkit-box-shadow: 0 1px 0 0 #34eb8f !important;
+  box-shadow: 0 1px 0 0 #34eb8f !important;
+}
+
+input.validation.ng-touched.ng-invalid, input.validation.ng-touched.serverError {
+  border-bottom-color: #ff3049 !important;
+  -webkit-box-shadow: 0 1px 0 0 #ff3049 !important;
+  box-shadow: 0 1px 0 0 #ff3049 !important;
+}
+
+input.validation.ng-touched.ng-invalid ~ .form-error,
+input.validation.ng-touched.serverError ~ .form-error {
+  display: block;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 15px;
+  background: #ff3049;
+  padding: 8px 12px 8px 12px;
+  color: #fff;
+  width: 200px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+input.validation.ng-touched.ng-valid ~ label {
+  color: #34eb8f !important;
+}
+
+input.validation.ng-touched.ng-invalid ~ label,
+input.validation.ng-touched.serverError ~ label {
+  color: #ff3049 !important;
+}
+
+input.validation.ng-touched.ng-invalid ~ .form-error:after,
+input.validation.ng-touched.serverError ~ .form-error:after {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(255, 48, 73, 0);
+	border-right-color: #ff3049;
+	border-width: 4px;
+	margin-top: -4px;
+}

@@ -1,0 +1,43 @@
+<div class="view-register">
+  <form name="registerForm" ng-submit="register()" novalidate>
+    <div class="form-group">
+      <label>Profil de l'entreprise</label>
+      <div class="radio-group">
+        <p>
+          <label>
+            <input name="company_type" type="radio" value="transporteur" ng-model="user.company_type" />
+            <span>Transporteur</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="company_type" type="radio" value="chargeur" ng-model="user.company_type" />
+            <span>Chargeur</span>
+          </label>
+        </p>
+      </div>
+    </div>
+    <div class="input-field">
+      <input id="email" name="email" type="email" ng-model="user.email" ng-model-options="{ updateOn: 'default blur' }" class="validation" ng-change="clearError('email')" ng-class="{ serverError: fieldErrors.email != null }" required>
+      <label for="email">Email</label>
+      <span class="form-error" ng-if="registerForm.email.$error.required">Email is required</span>
+      <span class="form-error" ng-if="registerForm.email.$error.email">Email is invalid</span>
+      <span class="form-error" ng-if="fieldErrors.email != null">{{ fieldErrors.email }}</span>
+    </div>
+    <div class="input-field">
+      <input id="password" name="password" type="password" ng-model="user.password" ng-model-options="{ updateOn: 'default blur' }" class="validation" required>
+      <label for="password">Mot de passe</label>
+      <span class="form-error" ng-show="registerForm.password.$error.required">Password is required</span>
+    </div>
+    <p class="form-infos">
+      Tous les champs sont obligatoires <br>
+      L'inscription à Fretly entraîne l'acceptation des <a href="#">conditions générales d'utilisation de la plateforme</a>
+    </p>
+    <br>
+    <button class="waves-effect waves-light btn-large" ng-disabled="registerForm.$invalid || fieldErrors.email != null">{{ loading ? "CHARGEMENT" : "S'INSCRIRE" }}</button>
+    <br><br>
+    <p>
+      Vous avez déjà un compte? <a ng-link="[\'login\']">Connectez-vous</a>
+    </p>
+  </form>
+</div>

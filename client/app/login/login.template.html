@@ -1,0 +1,17 @@
+<div class="view-login">
+  <form name="loginForm" ng-submit="login()" novalidate>
+    <div class="input-field">
+      <input id="email" name="email" type="email" ng-model="user.email" required>
+      <label for="email">Email</label>
+    </div>
+    <div class="input-field">
+      <input id="password" name="password" type="password" ng-model="user.password" required>
+      <label for="password">Mot de passe</label>
+    </div>
+    <button class="waves-effect waves-light btn-large" ng-disabled="registerForm.$invalid || fieldErrors.email != null">{{ loading ? "CHARGEMENT" : "CONNECTION" }}</button>
+    <br><br>
+    <p>
+      Vous n'avez pas de compte? <a href="/register">Créer un compte</a>
+    </p>
+  </form>
+</div>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="fretlyApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Fretly test</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="lib/materialize.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="app.css">
+  </head>
+
+  <body>
+
+    <div class="app-container">
+      <img src="src/logo.png" class="app-logo" alt="Fretly, le frêt simplifié">
+      
+      <!-- register -->
+      
+      <!-- end register -->
+      
+      <div ng-view class="view-frame"></div>
+    </div>
+
+    <script src="lib/materialize.js"></script>
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="core/user/user.module.js"></script>
+    <script src="core/user/user.service.js"></script>
+    <script src="core/core.module.js"></script>
+    <script src="siren/siren.module.js"></script>
+    <script src="siren/siren.component.js"></script>
+    <script src="register/register.module.js"></script>
+    <script src="register/register.component.js"></script>
+    <script src="login/login.module.js"></script>
+    <script src="login/login.component.js"></script>
+
+  </body>
+</html>
+    
